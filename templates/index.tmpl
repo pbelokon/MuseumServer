@@ -20,13 +20,15 @@
 <body>
     <h1><img class="logo" src="images/logo.png" alt="Frontend Masters Museum" width="300"
             fetchpriority="high"></h1>
-    <main>
-        <article>
+    <main> 
+        {{ range . }}
+         <article>
             <h2>{{ .Title }}</h2>
             <p>{{ .Description }}</p>
-            <img src="gallery/{{ .Image }}"
-                    fetchpriority="high" decoding="sync">
+            <img src="gallery/{{ .Image }}" fetchpriority="high" decoding="sync">
         </article>
+        {{ end }}
+        
     </main>
 </body>
 </html>
