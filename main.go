@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"html/template"
+	"museum/go/server/data"
 	"net/http"
 )
 
@@ -19,7 +20,7 @@ func handleTemplate(w http.ResponseWriter, r *http.Request ) {
 		return
 	}
 
-	html.Execute(w, "Test")
+	html.Execute(w, data.GetAll()[0])
 }
 
 func main() {
